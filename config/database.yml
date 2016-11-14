@@ -82,7 +82,10 @@ test:
 #     url: <%= ENV['DATABASE_URL'] %>
 #
 production:
-  <<: *default
-  database: awsTestApp_production
-  username: awsTestApp
-  password: <%= ENV['AWSTESTAPP_DATABASE_PASSWORD'] %>
+  adaptor: postgresql
+  encoding: unicode
+  database: <%= ENV["RDS_DATABASE_NAME"] %>
+  username: <%= ENV["RDS_DATABASE_USERNAME"] %>
+  password: <%= ENV["RDS_DATABASE_PASSWORD"] %>
+  host: <%= ENV["RDS_DATABASE_HOST"] %>
+  port: 5432
