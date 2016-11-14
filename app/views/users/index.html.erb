@@ -25,7 +25,7 @@
 				<h4 class="modal-title">Add Member</h4>
 			</div>
 			<div class="modal-body">
-				<%= form_for (@user = User.new) do |f| %>
+				<%= form_for (@user = User.new), html: { multipart: true } do |f| %>
 				<div class="bold">
 					Member Name
 				</div>
